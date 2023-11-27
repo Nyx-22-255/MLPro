@@ -6,6 +6,7 @@ import pandas as pd
 import seaborn as sns
 from tqdm import tqdm
 import gymnasium as gym
+import mlpro as mlpro
 from gymnasium.envs.toy_text.frozen_lake import generate_random_map
 
 sns.set_theme()
@@ -47,7 +48,7 @@ rng = np.random.default_rng(params.seed)
 params.savefig_folder.mkdir(parents=True, exist_ok=True)
 
 
-env = gym.make(
+env = mlpro.env.gym.make(
     "FrozenLake-v1",
     is_slippery=params.is_slippery,
     render_mode="rgb_array",
