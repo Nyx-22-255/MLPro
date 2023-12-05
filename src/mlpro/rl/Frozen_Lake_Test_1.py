@@ -48,7 +48,7 @@ rng = np.random.default_rng(params.seed)
 params.savefig_folder.mkdir(parents=True, exist_ok=True)
 
 
-env = mlpro.env.gym.make(
+env = gym.make(
     "FrozenLake-v1",
     is_slippery=params.is_slippery,
     render_mode="rgb_array",
